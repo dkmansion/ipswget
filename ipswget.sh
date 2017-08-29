@@ -157,7 +157,7 @@ else
 		cat /tmp/ipswlist_iOS${version}.txt | grep iPodtouch > ${path}/ipswlists/ipswListiOS${version}_iPodtouch.txt;
 
 		files=$(echo `wc -l < /tmp/ipswlist_iOS${version}.txt`);
-		filesizeestimate=$(($files*2.4));
+		filesizeestimate=$(($files*2));
 
 		echo "$files total files available";
 		echo "The estimated total download is ${filesizeestimate}GBs";
@@ -176,7 +176,7 @@ else
 			echo "Downloading iPhone ipsw files"
 
 			files=$(echo `wc -l < ${path}/ipswlists/ipswListiOS${version}_iPhone.txt`);
-			filesizeestimate=$(($files*2.4));
+			filesizeestimate=$(($files*2));
 
 			echo "${files} iPhone files available";
 			echo "The estimated total download is ${filesizeestimate}GBs";
@@ -193,7 +193,7 @@ else
 			echo "Downloading iPad ipsw files\n"
 
 			files=$(echo `wc -l < ${path}/ipswlists/ipswListiOS${version}_iPad.txt`);
-			filesizeestimate=$(($files*2.4));
+			filesizeestimate=$(($files*2));
 
 			echo "${files} iPad files available";
 			echo "The estimated total download is ${filesizeestimate}GBs";
@@ -210,7 +210,7 @@ else
 			echo "Downloading iPod Touch ipsw files\n"
 
 			files=$(echo `wc -l < ${path}/ipswlists/ipswListiOS${version}_iPod.txt`);
-			filesizeestimate=$(($files*2.4));
+			filesizeestimate=$(($files*2));
 
 			echo "${files} iPod files available";
 			echo "The estimated total download is ${filesizeestimate}GBs";
