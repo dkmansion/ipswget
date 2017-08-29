@@ -12,6 +12,7 @@ done
 
 clear
 
+
 black=`tput setaf 0`
 red=`tput setaf 1`
 green=`tput setaf 2`
@@ -37,7 +38,7 @@ if [ "${version}" == "" ] && [ "${devices}" == "" ] && [ "${path}" == "" ]; then
 ${gold}ipswget${reset} version ${gold}1.0.0${reset} 2017-07-10 17:19:35 PDT
 (c) dkmansion 2016
 ${gold}Purpose:${reset}	Query Apple for current IPSW (iOS Restore) file list based
-		on supplied version number, and optionally download the files.
+		on a supplied version number, and optionally download the files.
 
 ${gold}Usage:${reset}
 	[options][arguments]
@@ -49,7 +50,7 @@ ${gold}Options:${reset}
 
 ${gold}Arguments:${reset}
   for option
-    ${green}v${reset}	tuple representing iOS version number ${magenta}10.1.2${reset} or ${magenta}9.1${reset}, etc.
+    ${green}v${reset}	Dotted version string representing iOS version number ${magenta}10.1.2${reset} or ${magenta}9.1${reset}, etc.
     ${green}d${reset}	Summed OCTAL mimicing chmod permission numbering.
       ${magenta}0${reset}	 -- DOES NOT download any files except the list
       ${magenta}1${reset}	 -- gets iPad ipsws

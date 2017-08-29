@@ -14,13 +14,13 @@ Setup:
 
 USAGE:
 	Run ipswget without and inputs to view the usage info.
-    
+
           ____ ____  _____ _       __          ______ ______ ______
          /  _// __ \/ ___/| |     / / ../..   / ____// ____//_  __/
          / / / /_/ /\__ \ | | /| / / (    (  / / __ / __/    / /
        _/ / / ____/___/ / | |/ |/ /   \_._/ / /_/ // /___   / /
       /___//_/    /____/  |__/|__/          \____//_____/  /_/
-    
+
 
 	ipswget version 1.0.0 2017-07-10 17:19:35 PDT
 	(c) dkmansion 2016
@@ -31,14 +31,14 @@ USAGE:
 	        [options][arguments]
 
 	Options:
-	    -v  Apple iOS version number to retreive (argument as tuple ie. 1.2.3)
+	    -v  Apple iOS version number to retrieve (argument as tuple ie. 1.2.3)
 	    -d  Devices to download the ipsw files for as OCTAL sums. (see arguments)
 	    -p  Path for working downloads.
 
 	Arguments:
 	  for option
 	    v   tuple representing iOS version number 10.1.2 or 9.1, etc.
-	    d   Summed OCTAL mimicing chmod permission numbering.
+	    d   Summed OCTAL mimicking chmod permission numbering.
 	      0  -- DOES NOT download any files except the list
 	      1  -- gets iPad ipsws
 	      2  -- gets iPhone ipsws
