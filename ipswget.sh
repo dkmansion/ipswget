@@ -162,7 +162,7 @@ else
 		echo "$files total files available";
 		echo "The estimated total download is ${filesizeestimate}GBs";
 
-		exit;
+		#exit;
 
 		# destroy the temp file
 		rm -rf /tmp/ipswlist_iOS${version}.txt;
@@ -171,56 +171,55 @@ else
 		cd ${path};
 
 		# if option -d OCTAL sums to 1 (iPad), 3
-		if [ ${devices} == 1 ] || [ ${devices} == 3 ] || [ ${devices} == 5 ] || [ ${devices} == 7 ]; then
+		if [ ${devices} == "1" ] || [ ${devices} == "3" ] || [ ${devices} == "5" ] || [ ${devices} == "7" ]; then
 
-			echo "Downloading iPhone ipsw files"
+			echo -e "\tDownloading iPhone ipsw files";
 
 			files=$(echo `wc -l < ${path}/ipswlists/ipswListiOS${version}_iPhone.txt`);
 			filesizeestimate=$(($files*2));
 
-			echo "${files} iPhone files available";
-			echo "The estimated total download is ${filesizeestimate}GBs";
+			echo -e "\t${files} iPhone files available";
+			echo -e "\tThe estimated total download is ${filesizeestimate}GBs";
 
-			for i in $(cat ${path}/ipswlists/ipswListiOS${version}_iPhone.txt)
+			for i in $(cat ${path}/ipswlists/ipswListiOS${version}_iPhone.txt);
 			do
-				filename=$(`awk -F "/" '{print $NF}' ${i}`)
-				echo "Downloading ${filename}.\n"
-				curl -O $i
+				filename=$(echo $i | awk -F "/" '{print $NF}');
+				echo -e "\tDownloading ${filename}.\n";
+				curl -O $i;
 			done
-		fi
-
-		if [ ${devices} == 2 ] || [ ${devices} == 3 ] || [ ${devices} == 6 ] || [ ${devices} == 7 ]; then
-			echo "Downloading iPad ipsw files\n"
+		elif [ ${devices} == "2" ] || [ ${devices} == "3" ] || [ ${devices} == "6" ] || [ ${devices} == "7" ]; then
+			echo -e "\tDownloading iPad ipsw files\n";
 
 			files=$(echo `wc -l < ${path}/ipswlists/ipswListiOS${version}_iPad.txt`);
 			filesizeestimate=$(($files*2));
 
-			echo "${files} iPad files available";
-			echo "The estimated total download is ${filesizeestimate}GBs";
+			echo -e "\t${files} iPad files available";
+			echo -e "\tThe estimated total download is ${filesizeestimate}GBs";
 
-			for i in $(cat ${path}/ipswlists/ipswListiOS${version}_iPad.txt)
+			for i in $(cat ${path}/ipswlists/ipswListiOS${version}_iPad.txt);
 			do
-				filename=$(`awk -F "/" '{print $NF}' ${i}`)
-				echo "Downloading ${filename}.\n"
-				curl -O $i
+				filename=$(echo $i | awk -F "/" '{print $NF}');
+				echo -e "\tDownloading ${filename}.\n";
+				curl -O $i;
 			done
-		fi
 
-		if [ ${devices} == 4 ] || [ ${devices} == 5 ] || [ ${devices} == 6 ] || [ ${devices} == 7 ]; then
-			echo "Downloading iPod Touch ipsw files\n"
+		elif [ ${devices} == "4" ] || [ ${devices} == "5" ] || [ ${devices} == "6" ] || [ ${devices} == "7" ]; then
+			echo -e "\tDownloading iPod Touch ipsw files\n";
 
 			files=$(echo `wc -l < ${path}/ipswlists/ipswListiOS${version}_iPod.txt`);
 			filesizeestimate=$(($files*2));
 
-			echo "${files} iPod files available";
-			echo "The estimated total download is ${filesizeestimate}GBs";
+			echo -e "\t${files} iPod files available";
+			echo -e "\tThe estimated total download is ${filesizeestimate}GBs";
 
-			for i in $(cat ${path}/ipswlists/ipswListiOS${version}_iPodtouch.txt)
+			for i in $(cat ${path}/ipswlists/ipswListiOS${version}_iPodtouch.txt);
 			do
-				filename=$(`awk -F "/" '{print $NF}' ${i}`)
-				echo "Downloading ${filename}.\n"
-				curl -O $i
+				filename=$(echo $i | awk -F "/" '{print $NF}');
+				echo -e "\tDownloading ${filename}.\n";
+				curl -O $i;
 			done
+		else
+			echo "no matches"
 		fi
 	fi
 fi
