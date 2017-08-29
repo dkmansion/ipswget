@@ -93,7 +93,7 @@ if [ "${version}" == "" ]; then
 	echo "-v Version is required."
 else
 	if [ "${devices}" == "" ]; then
-		echo "-d Devices is needed, though 0 will be assumed if You must include a single OCTAL value with option -d{OCTAL} to tell the script which files types to download.
+		echo "-d Devices is needed, though 0 will be assumed if you must include a single OCTAL value with option -d{OCTAL} to tell the script which device file types to download.
 		ie. # ./listandgetipsws.sh -v{ios_version} -d{OCTAL}
 		eg. # ./listandgetipsws.sh -v10.3.2 -d7  --Gets all device ipsw files for version 10.3.2 available file list.
 
@@ -128,7 +128,6 @@ else
 				path=$(pwd);
 				echo "${mypath} not found. ${ac2firmwarecache} not found."
 				echo "Using current directory ${path} for file downloads"
-
 			fi
 		fi
 
@@ -138,7 +137,7 @@ else
 		curl http://ax.phobos.apple.com.edgesuite.net/WebObjects/MZStore.woa/wa/com.apple.jingle.appserver.client.MZITunesClientCheck/version | grep ipsw | grep $version | sort -u | sed 's/<string>//g' | sed 's/<\/string>//g' | grep -v protected | awk '{$1=$1}1' > /tmp/ipswlist_iOS${version}.txt
 
 		# sort the URLs at character 89 to get all device types together.
-		sort -k 1.89 -o ${path}/iOS${version}_All.txt /tmp/ipswlist_iOS${version}.txt;
+		sort -u -k 1.89 -o ${path}/iOS${version}_All.txt /tmp/ipswlist_iOS${version}.txt;
 
 		# If $path/lists does not exist make directory
 
@@ -153,7 +152,6 @@ else
 		cat /tmp/ipswlist_iOS${version}.txt | grep iPhone > ${path}/ipswlists/ipswListiOS${version}_iPhone.txt;
 
 		cat /tmp/ipswlist_iOS${version}.txt | grep iPodtouch > ${path}/ipswlists/ipswListiOS${version}_iPodtouch.txt;
-
 
 		files=$(echo `wc -l < /tmp/ipswlist_iOS${version}.txt`);
 		filesizeestimate=$(($files*2));
