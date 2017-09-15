@@ -22,8 +22,8 @@ USAGE:
       /___//_/    /____/  |__/|__/          \____//_____/  /_/
 
 
-	ipswget version 1.0.0 2017-07-10 17:19:35 PDT
-	(c) dkmansion 2016
+	ipswget version 1.0.1 2017-09-15 10:29:00 AM PDT
+	(c) dkmansion 2016-2017
 	Purpose:        Query Apple for current IPSW (iOS Restore) file list based
 	                on supplied version number, and optionally download the files.
 
