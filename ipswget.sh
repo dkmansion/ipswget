@@ -35,8 +35,8 @@ if [ "${version}" == "" ] && [ "${devices}" == "" ] && [ "${path}" == "" ]; then
    _/ / / ____/___/ / | |/ |/ /   \_._/ / /_/ // /___   / /
   /___//_/    /____/  |__/|__/          \____//_____/  /_/${reset}
 
-${gold}ipswget${reset} version ${gold}1.0.0${reset} 2017-07-10 17:19:35 PDT
-(c) dkmansion 2016
+${gold}ipswget${reset} version ${gold}1.0.1${reset} 2017-09-15 10:29:00 AM PDT
+(c) dkmansion 2016-2017
 ${gold}Purpose:${reset}	Query Apple for current IPSW (iOS Restore) file list based
 		on a supplied version number, and optionally download the files.
 
@@ -114,12 +114,17 @@ else
 
 	else
 		ac2firmwarecache="~/Library/Group\ Containers/K36BKF7T3D.group.com.apple.configurator/Library/Caches/Firmware"
+		apupath="/Library/APU/references/ipsws"
 		mypath="/Users/Shared/acFirmware"
 
 		if [ "${path}" == "" ]; then
 			echo -e "No destination Path provided with -p option. \n\nChecking for ${mypath} ..."
 			#This path is used for my iOS device management processes.  Feel free to change it to your default.  See the reasoning.readme for this folder use in my organization.
-			if [[ -d "${mypath}" ]]; then
+			if [[ -d "${apupath}" ]]; then
+				echo "Found '${apupath}'"
+				echo "Using '${apupath}' for file downloads"
+				path="${apupath}"
+			elif [[ -d "${mypath}" ]]; then
 				echo "Found '${mypath}'"
 				echo "Using '${mypath}' for file downloads"
 				path="${mypath}"
