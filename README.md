@@ -63,4 +63,4 @@ USAGE:
 
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-NOTE: ipsws downloaded are ~2.5GB each.
+NOTE: ipsws downloaded are ~>5GB each.
