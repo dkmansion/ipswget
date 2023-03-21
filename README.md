@@ -13,7 +13,7 @@ Setup:
     ie:   ls -s ~/Library/Group\ Containers/K36BKF7T3D.group.com.apple.configurator/Library/Caches/Firmware/ /Users/Shared/acFirmware/
 
 USAGE:
-	Run ipswget without and inputs to view the usage info.
+	Run ipswget without any inputs to view the usage info.
 
           ____ ____  _____ _       __          ______ ______ ______
          /  _// __ \/ ___/| |     / / ../..   / ____// ____//_  __/
